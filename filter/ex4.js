@@ -20,7 +20,7 @@ Exemple d'entrée:
   { name: 'Huawei P20 Pro', price: 649 }
 ]
 2. prix maximum: 500
-
+mbe
 Sortie attendue:
   [
     { name: 'Xiaomi Mi A2', price: 209 },
@@ -29,6 +29,8 @@ Sortie attendue:
  */
 
 function filterOnPrice(products, maxPrice) {
+  const result = products.filter(product => product.price <= maxPrice)
+  return result
 }
 
 // Ne pas modifier l'export

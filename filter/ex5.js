@@ -38,8 +38,15 @@ Exemple d'entrée:
 
  */
 
-function searchWordFilter(items, search) {
+function searchWordFilter(tab, search) {
+  const result = tab.filter(item => {
+    let regex = new RegExp(`(${search})`, 'gi')
+    if (regex.test(item) === true) {
+      return item
+    }
+  })
+  return result
 }
 
-// Ne pas modifier l'export
+// Ne pas modifier l'export'
 module.exports = searchWordFilter;

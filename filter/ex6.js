@@ -27,6 +27,14 @@ Sortie attendue:
 */
 
 function filterOffensiveComments(comments, bannedWords) {
+  const result = comments.filter(comment => {
+    let regex1 = /(bloody)/gi
+    let regex2 = /(damn)/gi
+    if (regex1.test(comment) === false && regex2.test(comment) === false) {
+      return comment
+    }
+  })
+  return result
 }
 
 // Ne pas modifier l'export
